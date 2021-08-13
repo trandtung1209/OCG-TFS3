@@ -43,5 +43,23 @@
 |   |-- main.go
 |   `-- server
 |       `-- server.go
+|-- lec-4
+|   `-- todo-go-mysql
+|       |-- README.md
+|       |-- mysql.png
+|       |-- todo
+|       |   |-- LICENSE.md
+|       |   |-- README.md
+|       |   |-- index.html
+|       |   `-- resources
+|       |       |-- css
+|       |       |   |-- reset.min.css
+|       |       |   `-- style.css
+|       |       `-- js
+|       |           `-- main.js
+|       |-- todo.png
+|       `-- todolist.go
 `-- naming_convention.md
+
+18 directories, 34 files
 ```
