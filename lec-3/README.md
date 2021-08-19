@@ -1,19 +1,21 @@
 # Calculator
 
-<img align="right" src="./cal.png" alt="Calculator" width="600">
+Screenshot :
 
-Cái này là máy tính hê hê
+<img  src="./demo.png" alt="Calculator">
 
 # Directory's tree
 
 ```
 .
 |-- README.md
-|-- cal.png
+|-- demo.png
 |-- client
 |   |-- index.html
 |   |-- main.js
 |   `-- style.css
+|-- calc
+|   |-- calc.go
 |-- main.go
 `-- server
     `-- server.go
