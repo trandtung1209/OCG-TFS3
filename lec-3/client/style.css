@@ -13,8 +13,13 @@ body {
   justify-content: center;
   align-items: center;
   height: 100vh;
-  background-color: #8ec5fc;
-  background-image: linear-gradient(62deg, #8ec5fc 0%, #e0c3fc 100%);
+  background: linear-gradient(-180deg, #bcc5ce 0%, #929ead 98%),
+    radial-gradient(
+      at top left,
+      rgba(255, 255, 255, 0.3) 0%,
+      rgba(0, 0, 0, 0.3) 100%
+    );
+  background-blend-mode: screen;
 }
 
 .container {
@@ -23,27 +28,28 @@ body {
   display: flex;
   flex-direction: column;
   background-color: #1c1c1c;
-  height: 60rem;
-  width: 33rem;
   font-family: "Poppins", sans-serif;
-  font-size: 1.8rem;
+  font-size: 2.2rem;
   font-weight: 300;
-  box-shadow: rgba(0, 0, 0, 0.15) 0px 15px 25px,
-    rgba(0, 0, 0, 0.05) 0px 5px 10px;
+  box-shadow: 5px 12px 20px rgb(36 37 38 / 13%);
 }
 
-.screen {
+.display {
   display: flex;
   flex: 1;
-  padding: 2rem;
+  padding: 3rem 2rem;
   font-size: 6rem;
   justify-content: flex-end;
   align-items: flex-end;
+  cursor: default;
+  overflow: hidden;
+  max-width: 330px;
 }
 
 .keypad {
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
+  grid-template-columns: repeat(4, 70px);
+  grid-template-rows: repeat(5, 70px);
   padding: 1rem;
   grid-gap: 1rem;
 }
@@ -52,18 +58,17 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 7rem;
   border-radius: 50%;
   background-color: #505050;
 }
 
 .key:hover {
   cursor: pointer;
-  filter: brightness(1.2);
+  filter: brightness(1.3);
 }
 
 .key--long {
-  grid-column: 1/3;
+  grid-column: span 2;
   border-radius: 5rem;
 }
 
