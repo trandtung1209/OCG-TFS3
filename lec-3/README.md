@@ -15,7 +15,7 @@ Screenshot :
 |   |-- main.js
 |   `-- style.css
 |-- calc
-|   |-- calc.go
+|   `-- calc.go
 |-- main.go
 `-- server
     `-- server.go
