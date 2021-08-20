@@ -4,10 +4,10 @@ const operators = document.querySelectorAll(".operator");
 const equal = document.querySelector(".equal");
 const clear = document.querySelector(".clear");
 const del = document.querySelector(".del");
-const endpoint = "127.0.0.1:8080/submit";
 
 let temp = "";
 let haveDot = false;
+let haveOpr = false;
 let data = {
   num1: "",
   num2: "",
@@ -16,6 +16,14 @@ let data = {
 
 numbers.forEach((number) => {
   number.addEventListener("click", (e) => {
+    // if (data.opr !== "" && display.innerText !== "") {
+    //   temp = "";
+    //   haveOpr = false;
+    // }
+    if (data.opr !== "")
+      operators.forEach((operator) => {
+        operator.classList.remove("operator--active");
+      });
     if (e.target.innerText === "." && !haveDot) {
       haveDot = true;
     } else if (e.target.innerText === "." && haveDot) {
@@ -28,6 +36,11 @@ numbers.forEach((number) => {
 
 operators.forEach((operator) => {
   operator.addEventListener("click", (e) => {
+    // if (e.target.innerText == "%")
+    //   display.innerText.split("").splice(0, 0, "0.0").join("");
+    if (haveOpr === false) haveOpr = true;
+    else return;
+
     data.num1 = temp;
     temp = "";
     data.opr = e.target.innerText;
@@ -42,21 +55,24 @@ clear.addEventListener("click", () => {
     opr: "",
   };
   haveDot = false;
+  haveOpr = false;
   temp = "";
   display.innerText = "0";
 });
 
 del.addEventListener("click", () => {
+  temp = display.innerText;
   temp = temp.substring(0, temp.length - 1);
   display.innerText = temp !== "" ? temp : "0";
 });
 
 equal.addEventListener("click", () => {
   data.num2 = temp;
-  if (data.num2 === "0" && data.opr === "÷") display.innerHTML = "j z tr .-.";
+  console.log(JSON.stringify(data));
+  if (data.num2 === "0" && data.opr === "÷") display.innerHTML = "ERROR";
   else {
-    fetch(endpoint, {
-      method: "POST", // or 'PUT'
+    fetch("http://127.0.0.1:8080/submit", {
+      method: "POST",
       mode: "cors",
       headers: {
         "Content-Type": "application/json",
@@ -67,34 +83,13 @@ equal.addEventListener("click", () => {
       .then((response) => response.json())
       .then((data) => {
         console.log("Success:", data);
+        display.innerText = data;
       })
       .catch((error) => {
         console.error("Error:", error);
       });
   }
-  // postData(endpoint, data)
-  //   .then((response) => response.json())
-  //   .then((data) => {
-  //     console.log("Success:", data);
-  //     display.innerText = data.num1;
-  //   })
-  //   .catch((error) => {
-  //     console.error("Error:", error);
-  //   });
 });
-
-// async function postData(url = "", data = {}) {
-//   const response = await fetch(url, {
-//     method: "POST",
-//     mode: "cors",
-//     headers: {
-//       "Content-Type": "application/json",
-//       Accept: "application/json",
-//     },
-//     body: JSON.stringify(data),
-//   });
-//   return response;
-// }
 
 // keyboard
 window.addEventListener("keydown", (e) => {
