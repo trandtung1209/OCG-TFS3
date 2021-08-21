@@ -35,21 +35,22 @@
 |       `-- text.go
 |-- lec-3
 |   |-- README.md
-|   |-- cal.png
+|   |-- calc
+|   |   `-- calc.go
 |   |-- client
 |   |   |-- index.html
 |   |   |-- main.js
 |   |   `-- style.css
+|   |-- demo.png
+|   |-- go.mod
 |   |-- main.go
 |   `-- server
 |       `-- server.go
 |-- lec-4
+|   |-- crawl-web-go-mysql
 |   `-- todo-go-mysql
 |       |-- README.md
-|       |-- mysql.png
-|       |-- todo
-|       |   |-- LICENSE.md
-|       |   |-- README.md
+|       |-- client
 |       |   |-- index.html
 |       |   `-- resources
 |       |       |-- css
@@ -57,9 +58,17 @@
 |       |       |   `-- style.css
 |       |       `-- js
 |       |           `-- main.js
+|       |-- mysql.png
 |       |-- todo.png
 |       `-- todolist.go
+|-- lec-5
+|   |-- README.md
+|   |-- drop.js
+|   |-- isPalindrome.js
+|   |-- seekAndDestroy.js
+|   |-- toSpinalCase.js
+|   `-- uniqueUnion.js
 `-- naming_convention.md
 
-18 directories, 34 files
+21 directories, 40 files
 ```
