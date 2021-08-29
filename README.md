@@ -9,6 +9,9 @@
 ```
 .
 |-- README.md
+|-- lec-1
+|   `-- naming_convention.md
+|-- lec-10
 |-- lec-2
 |   |-- README.md
 |   |-- calculator
@@ -68,7 +71,10 @@
 |   |-- seekAndDestroy.js
 |   |-- toSpinalCase.js
 |   `-- uniqueUnion.js
-`-- naming_convention.md
+|-- lec-6
+|-- lec-7
+|-- lec-8
+`-- lec-9
 
-21 directories, 40 files
+27 directories, 40 files
 ```
